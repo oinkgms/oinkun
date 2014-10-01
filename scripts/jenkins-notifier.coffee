@@ -65,7 +65,7 @@ module.exports = (robot) ->
 
     try
       data = req.body
-
+      robot.send envelope, "HOGE"
       if data.build.phase == 'FINISHED' or data.build.phase == 'FINALIZED'
         if data.build.status == 'FAILURE'
           if data.name in @failing
