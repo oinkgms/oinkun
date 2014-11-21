@@ -62,6 +62,10 @@ module.exports = (robot) ->
     res.robot.brain.save()
     res.send format(index + 1, todo) if todo?
 
+  hoge = (res) ->
+    res.send "ch #{channel_id} #{user_id}"
+
   robot.respond /todo add (.+)$/i, add
   robot.respond /todo li?st?$/i, list
   robot.respond /todo done(?:\s+(\d+))?$/i, done
+  robot.respond /todo hoge$/i, hoge
