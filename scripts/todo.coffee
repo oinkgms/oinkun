@@ -63,7 +63,7 @@ module.exports = (robot) ->
     res.send format(index + 1, todo) if todo?
 
   hoge = (res) ->
-    res.send "ch #{channel_id} #{user_id}"
+    res.send "ch #{res.channel_id} #{res.user_id}"
 
   robot.respond /todo add (.+)$/i, add
   robot.respond /todo li?st?$/i, list
