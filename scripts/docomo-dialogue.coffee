@@ -50,6 +50,7 @@ module.exports = (robot) ->
     else
       status = "t": ''
 
+    res.send process.env.HUBOT_DOCOMO_DIALOGUE_API_KEY
     res
       .http 'https://api.apigw.smt.docomo.ne.jp/dialogue/v1/dialogue'
       .query APIKEY: process.env.HUBOT_DOCOMO_DIALOGUE_API_KEY
