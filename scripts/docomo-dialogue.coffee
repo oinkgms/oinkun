@@ -28,7 +28,6 @@ module.exports = (robot) ->
   status  = {}
 
   robot.respond /(?:雑談\s+|(?:(?:(様|さま|サマ|殿|どの|さん|サン|はん|どん|やん|ちゃん|チャン|氏|君|くん|クン|たん|タン|先生|せんせ(?:い|ー))(?:、|。|!|！)?))|(?:(?:、|。|!|！)\s*))(.*)/, (res) ->
-    res.send process.env.HUBOT_DOCOMO_DIALOGUE_API_KEY
     #p = parseFloat(process.env.HUBOT_DOCOMO_DIALOGUE_P ? '0.3')
     #return unless Math.random() < p
     #message = res.match[2]
@@ -65,3 +64,4 @@ module.exports = (robot) ->
             "time": now
             "id": JSON.parse(body).context
             "mode": JSON.parse(body).mode
+    res.send process.env.HUBOT_DOCOMO_DIALOGUE_API_KEY
