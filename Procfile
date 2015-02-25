@@ -1,2 +1,2 @@
-web: bin/hubot --adapter slack
+web: bin/hubot --adapter slack --alias おいん
 #-a campfire -n Hubot
