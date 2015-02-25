@@ -28,6 +28,7 @@ module.exports = (robot) ->
   status  = {}
 
   robot.respond /(?:雑談\s+|(?:(?:(様|さま|サマ|殿|どの|さん|サン|はん|どん|やん|ちゃん|チャン|氏|君|くん|クン|たん|タン|先生|せんせ(?:い|ー))(?:、|。|!|！)?))|(?:(?:、|。|!|！)\s*))(.*)/, (res) ->
+    res.send "HOGE"
     p = parseFloat(process.env.HUBOT_DOCOMO_DIALOGUE_P ? '0.3')
     return unless Math.random() < p
     message = res.match[2]
