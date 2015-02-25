@@ -58,6 +58,7 @@ module.exports = (robot) ->
       .post(JSON.stringify({ utt: message, context: status['id'], mode: status['mode'], t: status['t'] })) (err, response, body) ->
         if err?
           console.log "Encountered an error #{err}"
+          res.send "Encountered an error #{err}"
         else
           res.send JSON.parse(body).utt
           status =
