@@ -56,6 +56,7 @@ module.exports = (robot) ->
       .query APIKEY: process.env.HUBOT_DOCOMO_DIALOGUE_API_KEY
       .header 'Content-Type', 'application/json'
       .post(JSON.stringify({ utt: message, context: status['id'], mode: status['mode'], t: status['t'] })) (err, response, body) ->
+        res.send process.env.HUBOT_DOCOMO_DIALOGUE_API_KEY
         if err?
           console.log "Encountered an error #{err}"
           res.send "Encountered an error #{err}"
@@ -65,4 +66,3 @@ module.exports = (robot) ->
             "time": now
             "id": JSON.parse(body).context
             "mode": JSON.parse(body).mode
-    res.send process.env.HUBOT_DOCOMO_DIALOGUE_API_KEY
