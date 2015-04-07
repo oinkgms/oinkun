@@ -5,6 +5,6 @@ module.exports = (robot) ->
    #send = (room, msg) -> (new robot.Response(robot, {user : {id : -1, name : room}, text : "none", done : false}, [])).send msg
    cronjob = new cronJob('0 0 10 * * 1-5', () ->
      envelope = room: "#random"
-     robot.send envelope, "事務所なう"
+     robot.send envelope, "スタジオなう"
    )
    cronjob.start()
